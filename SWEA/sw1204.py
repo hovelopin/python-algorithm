@@ -12,11 +12,13 @@ for test_case in range(1, T + 1):
     # 1000개의 점수를 score 리스트에 담는다.
     score = sorted(list(input().split()))
     for i in score:
+        # 첫번째 부터 검사해서 count를 통해서 몇개인지 검사한다.
         result = score.count(i)
         if( cnt <= result ):
-            maxValue = result
+            # 정렬했기 때문에 가장 뒤에 들어가는 value값이 같은 값중에서 큰 값이다.
             value = i
             cnt = result
     print(f'#{case} {value}')
+    # 꼭 초기화를 해줘야함!
     cnt = 0
     result = 0
