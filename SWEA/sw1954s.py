@@ -14,7 +14,7 @@ for tc in range(1, T+1):
 
     for num in range(2, N**2+1):
         x += dx[mode]
-        y+= dy[mode]
+        y += dy[mode]
         # 배열에 숫자 채우기
         snail[x][y] = num
         # 인덱스가 범위 안에있고, 숫자가 아직 안써졌다면 같은 모드 유지

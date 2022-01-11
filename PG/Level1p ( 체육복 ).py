@@ -1,4 +1,6 @@
 # 테스트 케이스 모두를 통과 못한 문제!
+# 정확성 55점..
+# 여벌의 체육복을 가져온 학생이 체육복을 도난 당했을 경우를 찾지 못함!
 
 def solution(n, lost, reserve):
     answer = 0
@@ -7,6 +9,9 @@ def solution(n, lost, reserve):
 
     for i in range(len(lost)):
         for j in range(len(reserve)):
+            if lost in reserve:
+                del reserve[lost]
+                break
             if(lost[i] - 1 == reserve[j]):
                 cnt+=1
                 reserve.pop(0)
@@ -19,4 +24,4 @@ def solution(n, lost, reserve):
 
     return answer
 
-solution(3,[3],[1])
+solution(5,[2,3,4],[1,3,5])
