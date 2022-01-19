@@ -8,6 +8,7 @@ def solution(ip):
                 stack.append(c)
             else:
                 # stack이 비어있으면! return false 비어있다는 말은 닫는괄호부터 들어왔다는 뜻
+                # 파이썬에서 empty list는 false , empty가 아닌 list는 true를 리턴
                 if not stack:
                     return False
                 x = stack.pop()
