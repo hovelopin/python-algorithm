@@ -16,5 +16,3 @@ for i in result:
 
 
 
-
-
