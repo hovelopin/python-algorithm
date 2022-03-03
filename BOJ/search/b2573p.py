@@ -1,20 +1,18 @@
-# swea 코드 
-import sys
-sys.setrecursionlimit(1000000)
+n , m = map(int,input().split())
 
-def inorder (cur , node):
-    # 왼쪽 자식 노드 방문
-    inorder(cur*2 , node)
-    if( cur > lastIdx ):
-        return 0
-    # 현재 노드 방문
-    print(node[cur]+ '')
-    # 오른쪽 자식노드 방문
-    inorder(cur*2+1 , node)
+ice = [list(map(int,input().split())) for _ in range(n)]
+cnt = 0
 
-for tc in range(10):
-    N = int(input())
-    lastIdx = N
-    tree = list(map(str,input().split()))
-    print(tree)
-    inorder(1,tree)
+changeIce = ice
+
+def dfs(x,y):
+    ice[x][y] -= 1
+
+
+
+
+for i in range(n):
+    for j in range(m):
+        if not dfs(i,j):
+            cnt += 1
+

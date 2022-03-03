@@ -1,33 +1,31 @@
-from collections import deque
-import sys
-read = sys.stdin.readline
+from collections import Counter
 
-def bfs(x, y):
-  dx = [1, -1, 0, 0, 1, -1, 1, -1]
-  dy = [0, 0, -1, 1, -1, 1, 1, -1]
-  field[x][y] = 0
-  q = deque()
-  q.append([x, y])
-  while q:
-    a, b = q.popleft()
-    for i in range(8):
-      nx = a + dx[i]
-      ny = b + dy[i]
-      if 0 <= nx < h and 0 <= ny < w and field[nx][ny] == 1:
-        field[nx][ny] = 0
-        q.append([nx, ny])
+# 10시 15분 => 45분까지
 
-while True:
-  w, h = map(int, read().split())
-  if w == 0 and h == 0:
-    break
-  field = []
-  count = 0
-  for _ in range(h):
-    field.append(list(map(int, read().split())))
-  for i in range(h):
-    for j in range(w):
-      if field[i][j] == 1:
-        bfs(i, j)
-        count += 1
-  print(count)
+def solution(id_list, report, k):
+    answer = []
+    check_list = []
+
+    dic = dict()
+
+    for id in id_list:
+        dic[id] = []
+
+    for i in report:
+        id , name = i.split()
+        if name not in dic[id]:
+            dic[id].append(name)
+            check_list.append(name)
+
+    
+    print(dic)
+    print(check_list)
+
+    cnt = Counter(check_list)
+
+    for id in id_list:
+        answer.append(len([check for check in dic[id] if cnt[check] >= k]))
+    print(answer)
+    return answer
+
+solution(["muzi", "frodo", "apeach", "neo"],["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"],2)
