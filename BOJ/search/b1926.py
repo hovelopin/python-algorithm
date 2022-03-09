@@ -10,18 +10,20 @@ paintCnt = 0
 paintWidth = 0
 
 maxWidth =[]
+maxCnt = []
 
 dx = [-1,1,0,0]
 dy = [0,0,-1,1]
 
-queue=deque()
+
 
 def bfs(x,y):
     global paintWidth
+    queue = deque()
     queue.append([x,y])
     # 처음 탐색했으면 0으로 만들고 paintWidth도 0이다.
     paint[x][y] = 0
-    paintWidth = 0
+    paintWidth += 1
 
     while queue:
         x,y = queue.popleft()
@@ -38,8 +40,9 @@ for i in range(n):
         if paint[i][j] == 1:
             bfs(i,j)
             if(paintWidth != 0):
-                maxWidth.append(paintWidth+1)
+                maxWidth.append(paintWidth)
             paintCnt+=1
+            paintWidth = 0
 
 
 if(len(maxWidth) == 0):
