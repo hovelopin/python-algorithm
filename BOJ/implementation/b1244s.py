@@ -34,7 +34,6 @@ for i in range(student):
                 break
             start -= 1
             end += 1
-    # print(switch)
 for i in range(1, len(switch)):
     print(switch[i], end=' ')
     if not i % 20:
