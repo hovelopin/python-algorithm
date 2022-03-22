@@ -1,14 +1,6 @@
-# 시작 => 15시 45분
-from itertools import combinations
+from itertools import permutations
 
-tCase = list(map(int, input().split()))
+a = [1,2,3,1]
 
-per = list(combinations(tCase[1:],6))
-
-
-for i in per:
-    for j in i:
-        print(j, end =' ')
-    print()
-
-
+per = list(permutations(a,2))
+print(per)
