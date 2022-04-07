@@ -1,6 +1,9 @@
-from itertools import permutations
+tc = int(input())
+n = int(input())
+m = int(input())
 
-a = [1,2,3,1]
-
-per = list(permutations(a,2))
-print(per)
+graph=[[] for _ in range(n+1)]
+for j in range(m):
+    x,y = map(int,input().split())
+    graph[x].append(y)
+print(len(graph[4]))
