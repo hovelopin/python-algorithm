@@ -1,3 +1,4 @@
+# 범위를 굉장히 헷갈리게 해놓아서 오답이 나왔음
 from collections import deque
 
 t = int(input())
