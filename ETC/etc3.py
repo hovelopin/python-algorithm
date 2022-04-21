@@ -9,7 +9,7 @@ def strContain(A,B):
     else:
         if A[cnt] not in B:
             print('No')
-            exit()
+            return
         cnt += 1
         strContain(A,B)
 
