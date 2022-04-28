@@ -18,3 +18,11 @@ for i in range(m):
         result.append(max(nList))
         cnt = 0
 print(sum(result))
+
+
+
+'''
+테스트 케이스 1
+5 8 3
+2 4 5 4 6
+'''
