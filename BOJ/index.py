@@ -1,1 +1,3 @@
-print('3' in str(33))
+result = [1,3]
+for i in result:
+    print(i)
