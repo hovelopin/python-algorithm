@@ -15,8 +15,6 @@ for i in fear:
 print(sumResult)
 
 
-
-
 """
 테스트 케이스 1
 5

@@ -1,3 +1,3 @@
-result = [1,3]
-for i in result:
-    print(i)
+result = [1,1,1,0,1,1,0,1]
+print(result[0:3])
+print(result)
