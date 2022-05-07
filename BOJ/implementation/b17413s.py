@@ -22,6 +22,3 @@ for i in s:
             result += new
             new = ""
 print(result + new)
-
-
-
