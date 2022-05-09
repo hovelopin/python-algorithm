@@ -1,4 +1,3 @@
-# 16시 18분 =>
 s = list(input())
 flag = False
 new = ''
