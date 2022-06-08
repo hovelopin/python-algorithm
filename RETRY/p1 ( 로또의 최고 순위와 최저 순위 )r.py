@@ -2,6 +2,7 @@
 def solution(lottos, win_nums):
     cnt = 0
     zero = 0
+
     # win_nums 안에 있는 i가 lottos 안에 있다면 cnt +=1
     for i in lottos:
         if i == 0:
