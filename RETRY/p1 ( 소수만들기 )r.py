@@ -4,9 +4,10 @@ def solution(nums):
 
     cnt = 0
     sumList = []
-
+    print(list(cb(nums,3)))
     for i,j,k in cb(nums,3):
         sumList.append(i+j+k)
+    print(sumList)
 
     for i in sumList:
         start = 2
