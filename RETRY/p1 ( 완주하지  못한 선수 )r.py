@@ -13,8 +13,4 @@ def solution(participant, completion):
             return k
 
 
-
-
-
-
 solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"])
