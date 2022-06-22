@@ -1,17 +1,25 @@
-N = int(input())
+# 20시 45분 ( 시작 ) =>
 
-T = []
-P = []
+n = int(input())
+# 1일부터 n일까지 순차적으로 나타남
+meeting = [list(map(int,input().split())) for _ in range(n)]
 
-profit = []
+maxProfit = 0
 
-sumValue = 0
+for i in range(n):
+    value = 0
+    for now in range(0, len(meeting), t):
+        t, p = meeting[now]
+        if now + t > n-1:
+            break
+        else:
+            value += p
+    maxProfit = max(maxProfit , value)
+print(maxProfit)
 
-for i in range(N):
-    x,y = map(int,input().split())
-    T.append(x)
-    P.append(y)
 
 
-print(T)
-print(P)
+
+
+
+
