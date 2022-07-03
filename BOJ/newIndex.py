@@ -1,3 +1,3 @@
-arr = [1,2,3]
-num1 = arr.pop(1)
-print(num1)
+arr = [3]
+
+print(sum(arr[0:1]))
