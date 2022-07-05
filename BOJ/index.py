@@ -1,1 +1,5 @@
-print(len(str(1234567)))
+arr = [
+    [3,4]
+]
+
+print(arr[0])
