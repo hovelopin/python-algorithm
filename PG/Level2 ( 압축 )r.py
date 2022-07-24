@@ -21,7 +21,7 @@ def solution(msg):
             # value값이 있으면 true라 통과 없으면 none이라 통과못함
             if value:
                 i += 1
-                res.append(dict[temp])
+                # res.append(dict[temp])
             else:
                 dict[temp] = alphabetCnt
                 break
