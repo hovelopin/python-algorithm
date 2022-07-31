@@ -1,31 +1,23 @@
-from string import ascii_uppercase
+import sys
+word = list(sys.stdin.readline().rstrip())
 
-def solution(msg):
-    res = []
-    dict = {}
-    alphabetCnt = 0
-    # 파이썬의 알파벳 모듈을 활용하여 dict를 채운다.
-    for i in ascii_uppercase:
-        alphabetCnt += 1
-        dict[i] = alphabetCnt
+i = 0
+start = 0
 
-    # 27부터 시작하기 위해서 1을 증가시킨다.
-    for i in range(len(msg)-1):
-        alphabetCnt += 1
-        temp = ""
-        while True:
-            # 키로 값을 조회해서 value값이 있는지 확인하고 있으면 temp에 잠시 넣어둔다.
-            temp += msg[i]
-            print(temp)
-            value = dict.get(temp)
-            # value값이 있으면 true라 통과 없으면 none이라 통과못함
-            if value:
-                i += 1
-                res.append(dict[temp])
-            else:
-                dict[temp] = alphabetCnt
-                break
-    print(res)
-    print(dict)
+while i < len(word):
+    if word[i] == "<":       # 열린 괄호를 만나면
+        i += 1
+        while word[i] != ">":      # 닫힌 괄호를 만날 때 까지
+            i += 1
+        i += 1               # 닫힌 괄호를 만난 후 인덱스를 하나 증가시킨다
+    elif word[i].isalnum(): # 숫자나 알파벳을 만나면
+        start = i
+        while i < len(word) and word[i].isalnum():
+            i+=1
+        tmp = word[start:i] # 숫자,알파벳 범위에 있는 것들을
+        tmp.reverse()       # 뒤집는다
+        word[start:i] = tmp
+    else:                   # 괄호도 아니고 알파,숫자도 아닌것 = 공백
+        i+=1                # 그냥 증가시킨다
 
-solution("KAKAO")
+print("".join(word))
